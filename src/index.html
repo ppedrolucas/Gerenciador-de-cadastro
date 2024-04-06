@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Day JS-->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_relativeTime)
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>
+      dayjs.locale("pt-br")
+    </script>
+    <!--Day JS-->
+    <link rel="stylesheet" href="output.css" />
+    <title>Gerenciador de cadastro</title>
+  </head>
+  <body class="w-full h-screen p-8 bg-zinc-900 text-white">
+    <form
+      onsubmit="addparticipante(event)"
+      class="w-full flex py-8 items-center border-t-2 border-b-2 border-zinc-700"
+    >
+      <fieldset class="">
+        <legend class="text-2xl font-bold pb-8">Inscrição</legend>
+
+        <div class="flex items-center gap-x-5">
+          <div
+            class="h-10 relative flex items-center border rounded-lg border-zinc-700"
+          >
+            <img src="assets/circle-user-round.png" class="absolute h-4 px-3" />
+            <input
+              type="text"
+              placeholder="Nome Completo"
+              name="nome"
+              required
+              class="bg-transparent ml-8 p-2 outline-none text-gray-200"
+            />
+          </div>
+          <div
+            class="h-10 relative flex items-center border rounded-lg border-zinc-700"
+          >
+            <img src="assets/at-sign.png" class="absolute h-4 px-3" />
+            <input
+              type="email"
+              placeholder="E-mail"
+              name="email"
+              required
+              class="bg-transparent ml-8 p-2 outline-none text-gray-200"
+            />
+          </div>
+
+          <button
+            class="font-bold uppercase py-2 px-5 rounded-lg bg-sky-600 text-gray-200"
+          >
+            Realizar Inscrição
+          </button>
+        </div>
+      </fieldset>
+    </form>
+    <div class="">
+      <h1 class="font-bold text-2xl py-8">Participantes</h1>
+    </div>
+
+    <table class="w-full flex flex-col mb-8 border border-zinc-700 rounded-lg">
+      <thead>
+        <tr class="grid grid-cols-4 place-items-start p-4 text-lg">
+          <th class="col-span-2">Participantes</th>
+          <th class="">Data de inscrição</th>
+          <th class="">Check-In</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
